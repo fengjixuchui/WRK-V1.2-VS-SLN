@@ -488,8 +488,53 @@ typedef ULONG_PTR      CHUNK, *PCHUNK;
 #define BitScanForwardChunk BitScanForward64
 #define BitScanReverseChunk BitScanReverse64
 #else
+
+#ifndef SML_BITSCAN
+#define SML_BITSCAN
+#endif // !SML_BITSCAN
+
+
+#if defined(SML_BITSCAN)
+
+__declspec(noinline)
+static unsigned char _Sml_BitScanForward(unsigned long* index, unsigned long mask)
+{
+	__asm
+	{
+		push		edx
+		bsf         eax, dword ptr[mask]
+		mov			edx, dword ptr[index]
+		mov			[edx], eax
+		mov			eax, 0
+		setne       al
+		pop			edx
+	}
+}
+
+__declspec(noinline)
+static unsigned char _Sml_BitScanReverse(unsigned long* index, unsigned long mask)
+{
+	__asm
+	{
+		push		edx
+		bsr         eax, dword ptr[mask]
+		mov			edx, dword ptr[index]
+		mov			[edx], eax
+		mov			eax, 0
+		setne       al
+		pop			edx
+	}
+}
+
+
+#define BitScanForwardChunk _Sml_BitScanForward
+#define BitScanReverseChunk _Sml_BitScanReverse
+
+#else
 #define BitScanForwardChunk _BitScanForward
 #define BitScanReverseChunk _BitScanReverse
+#endif
+
 #endif
 
 
