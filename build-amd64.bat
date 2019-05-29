@@ -2,7 +2,8 @@
 
 call setenv-amd64.bat
 
-cd base\ntos\
+pushd base\ntos\
 
 nmake -nologo %ARCH%=
 
+popd
