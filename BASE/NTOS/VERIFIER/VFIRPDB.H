@@ -53,7 +53,8 @@ typedef struct _IOV_DATABASE_HEADER {
     LIST_ENTRY              ChainLink;      // Head is HeadPacket
     PIOV_DATABASE_HEADER    ChainHead;      // First packet in a chain.
     PFN_IRPDBEVENT_CALLBACK NotificationCallback;
-};
+//};
+} IOV_DATABASE_HEADER;
 
 VOID
 FASTCALL

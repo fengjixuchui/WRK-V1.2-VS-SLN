@@ -1288,7 +1288,7 @@ reparse_loop:
         BOOLEAN result;
 
         if (fastIoDispatch &&
-            fastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET( FAST_IO_DISPATCH, FastIoQueryOpen ) &&
+            fastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET( FAST_IO_DISPATCH, FastIoQueryOpen ) &&
             fastIoDispatch->FastIoQueryOpen) {
 
             IoSetNextIrpStackLocation( irp );
@@ -1832,7 +1832,7 @@ reparse_loop:
                     //
 
                     if (fastIoDispatch &&
-                        fastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET( FAST_IO_DISPATCH, FastIoQueryNetworkOpenInfo ) &&
+                        fastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET( FAST_IO_DISPATCH, FastIoQueryNetworkOpenInfo ) &&
                         fastIoDispatch->FastIoQueryNetworkOpenInfo) {
                         queryResult = fastIoDispatch->FastIoQueryNetworkOpenInfo(
                                         fileObject,
@@ -2385,7 +2385,7 @@ Return Value:
             } else {
                 leave;
             }
-        }  else if (lengthNeeded < FIELD_OFFSET( FILE_NAME_INFORMATION, FileName )) {
+        }  else if (lengthNeeded < (ULONG)FIELD_OFFSET( FILE_NAME_INFORMATION, FileName )) {
             lengthNeeded = FIELD_OFFSET( FILE_NAME_INFORMATION, FileName );
         }
 

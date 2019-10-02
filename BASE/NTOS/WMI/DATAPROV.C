@@ -977,7 +977,7 @@ Return Value:
 
             wnode = (PWNODE_ALL_DATA)buffer;
 
-            if (bufferSize < FIELD_OFFSET(WNODE_ALL_DATA,
+            if (bufferSize < (ULONG)FIELD_OFFSET(WNODE_ALL_DATA,
                                           OffsetInstanceDataAndLength))
             {
                 //

@@ -51,7 +51,7 @@ typedef enum
     CpuStateCheckBus = 2,
     CpuStateCheckRegFile = 3,
     CpuStateCheckMS = 4
-};
+} CpuStateCheck;
 
 extern ULONG WmipDisableMCAPopups;
 
