@@ -1,4 +1,4 @@
-set wrk=E:\~en_wrk\WRK-V1.2
+set wrk=D:\git-repo\WRK-V1.2-VS-SLN
 set arch=amd64
 path=%wrk%\tools\%arch%;%path%
 cd /d %wrk%\base\ntos
