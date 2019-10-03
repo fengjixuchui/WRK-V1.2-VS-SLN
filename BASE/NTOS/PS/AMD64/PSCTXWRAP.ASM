@@ -59,8 +59,8 @@ include ksamd64.inc
 ;--
 
 
-sml_xmmword_ptr TEXTEQU <xmmword ptr>
-;sml_xmmword_ptr TEXTEQU <byte ptr>
+;sml_xmmword_ptr TEXTEQU <xmmword ptr>
+sml_xmmword_ptr TEXTEQU <byte ptr>
 
 SaFrame struct
         P1Home  dq ?                    ; parameter home addresses

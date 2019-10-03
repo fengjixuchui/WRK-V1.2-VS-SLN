@@ -298,8 +298,8 @@ KeBC50: mov     qword ptr Beframe.P5Home[rsp], 0  ; set parameter 5 to 0
 ;
 ;--
 
-;sml_xmmword_ptr  TEXTEQU <byte ptr>
-sml_xmmword_ptr  TEXTEQU <xmmword ptr>
+sml_xmmword_ptr  TEXTEQU <byte ptr>
+;sml_xmmword_ptr  TEXTEQU <xmmword ptr>
 
 KfFrame struct
         P1Home  dq ?                    ; parameter home addresses
