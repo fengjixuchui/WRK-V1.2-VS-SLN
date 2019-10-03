@@ -2618,8 +2618,8 @@ Return Value:
 
 
     Status = WmipProbeWnodeWorker(WnodeHeader,
-                                  FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
-                                               VariableData),
+								(ULONG)FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
+                                  VariableData),
                                   Wnode->OffsetInstanceName,
                                   Wnode->DataBlockOffset,
                                   Wnode->SizeDataBlock,

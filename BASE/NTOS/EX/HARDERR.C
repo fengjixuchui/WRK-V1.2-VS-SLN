@@ -347,11 +347,10 @@ punt1:
     }
     except(EXCEPTION_EXECUTE_HANDLER) {
         _snprintf (ExpSystemErrorBuffer, sizeof (ExpSystemErrorBuffer),
-                   //"Exception Processing Message %lx Parameters %lx %lx %lx %lx",
-					"Exception Processing Message %lx Parameters %llx %llx %llx %llx",
-					ErrorStatus,
-					(LONGLONG)ParameterVector[0],
-					(LONGLONG)ParameterVector[1],
+                   "Exception Processing Message %lx Parameters %llx %llx %llx %llx",
+                   ErrorStatus,
+                   (LONGLONG)ParameterVector[0],
+                   (LONGLONG)ParameterVector[1],
 					(LONGLONG)ParameterVector[2],
 					(LONGLONG)ParameterVector[3]);
     }

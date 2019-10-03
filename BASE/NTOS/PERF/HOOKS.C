@@ -392,7 +392,6 @@ Return Value:
 
 {
     char *cp = Key;
-	LONG Absvalue;
     ULONG i, ConvKey=0;
     for(i = 0; i < Len; i++)
     {
@@ -403,14 +402,14 @@ Return Value:
     #define RNDM_CONSTANT   314159269
     #define RNDM_PRIME     1000000007
 
-	Absvalue = (LONG)((LONG)RNDM_CONSTANT * (LONG)ConvKey);
-	if (Absvalue < 0)
+	LONG abs_value = (LONG)(RNDM_CONSTANT * ConvKey);
+	if (abs_value < 0)
 	{
-		Absvalue = -Absvalue;
+		abs_value = -abs_value;
 	}
+	return (abs_value % RNDM_PRIME);
 
     //return (abs(RNDM_CONSTANT * ConvKey) % RNDM_PRIME);
-	return (Absvalue % RNDM_PRIME);
 }
 
 

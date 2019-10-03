@@ -58,8 +58,9 @@ include ksamd64.inc
 ;
 ;--
 
-;sml_xmmword_ptr  TEXTEQU <byte ptr>
-sml_xmmword_ptr  TEXTEQU <xmmword ptr>
+
+sml_xmmword_ptr TEXTEQU <xmmword ptr>
+;sml_xmmword_ptr TEXTEQU <byte ptr>
 
 SaFrame struct
         P1Home  dq ?                    ; parameter home addresses
@@ -107,7 +108,7 @@ SaFrame ends
         save_xmm128 xmm12, sml_xmmword_ptr SaFrame.SavedXmm12 ;
         save_xmm128 xmm13, sml_xmmword_ptr SaFrame.SavedXmm13 ;
         save_xmm128 xmm14, sml_xmmword_ptr SaFrame.SavedXmm14 ;
-        save_xmm128 xmm15, sml_xmmword_ptr  SaFrame.SavedXmm15 ;
+        save_xmm128 xmm15, sml_xmmword_ptr SaFrame.SavedXmm15 ;
 
         END_PROLOGUE
 

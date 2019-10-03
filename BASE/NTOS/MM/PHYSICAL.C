@@ -109,9 +109,7 @@ PFN_NUMBER MmVadPhysicalPages;
 
 #if DBG
 LOGICAL MiUsingLowPagesForAwe = FALSE;
-//#if 0
 extern ULONG MiShowStuckPages;
-//#endif
 #endif
 
 #define MI_WRITE_ZERO_PTE_NO_LOGGING(PointerPte)    PointerPte->u.Long = 0
@@ -3190,7 +3188,6 @@ Environment:
             case 3:
 
                 MmEmptyAllWorkingSets ();
-//#if 0
 #if DBG
                 if (MiShowStuckPages != 0) {
                     MiFlushAllPages ();
@@ -3199,18 +3196,15 @@ Environment:
                                             (PLARGE_INTEGER)&MmHalfSecond);
                 }
 #endif
-//#endif
                 i -= 1;
                 break;
 
             case 2:
-//#if 0
 #if DBG
                 if (MiShowStuckPages != 0) {
                     MmEmptyAllWorkingSets ();
                 }
 #endif
-//#endif
                 MiFlushAllPages ();
                 KeDelayExecutionThread (KernelMode,
                                         FALSE,

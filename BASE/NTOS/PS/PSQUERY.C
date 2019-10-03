@@ -1489,8 +1489,7 @@ NtQueryInformationProcess(
         ULONG StacksLeft;
         ULONG i, j;
 
-        //if (ProcessInformationLength < (ULONG)FIELD_OFFSET (PROCESS_HANDLE_TRACING_QUERY,
-		if (ProcessInformationLength < (ULONG)FIELD_OFFSET(PROCESS_HANDLE_TRACING_QUERY,
+        if (ProcessInformationLength < (ULONG)FIELD_OFFSET (PROCESS_HANDLE_TRACING_QUERY,
                                                      HandleTrace)) {
             return STATUS_INFO_LENGTH_MISMATCH;
         }

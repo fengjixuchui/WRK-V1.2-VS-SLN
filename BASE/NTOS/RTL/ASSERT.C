@@ -54,7 +54,6 @@ RtlAssert(
     __in_opt PSTR MutableMessage
     )
 {
-//#if 0
 #if DBG || RTL_ASSERT_ALWAYS_ENABLED
     char Response[ 2 ];
 
@@ -107,7 +106,6 @@ RtlAssert(
     DbgBreakPoint();
     ZwTerminateProcess( NtCurrentProcess(), STATUS_UNSUCCESSFUL );
 #endif
-//#endif
 }
 
 #ifdef _X86_

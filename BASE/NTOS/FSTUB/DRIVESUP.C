@@ -2900,7 +2900,7 @@ Notes:
 
 #if DBG
     if (NT_SUCCESS(status)) {
-        //FstubDbgPrintDriveLayout(*PartitionBuffer);
+        FstubDbgPrintDriveLayout(*PartitionBuffer);
     }
 #endif
     return status;
@@ -3393,7 +3393,7 @@ Return Value:
 
     PAGED_CODE();
 
-    //FstubDbgPrintDriveLayout ( PartitionBuffer );
+    FstubDbgPrintDriveLayout ( PartitionBuffer );
 
     //
     // Determine the size of a write operation to ensure that at least 512

@@ -6035,8 +6035,7 @@ ExpQueryModuleInformation (
     if (ARGUMENT_PRESENT(ReturnLength)) {
         *ReturnLength = RequiredLength;
     }
-    //if (ModuleInformationLength >= (ULONG)FIELD_OFFSET( RTL_PROCESS_MODULES, Modules )) {
-	if (ModuleInformationLength >= (ULONG)FIELD_OFFSET(RTL_PROCESS_MODULES, Modules)) { 
+    if (ModuleInformationLength >= (ULONG)FIELD_OFFSET( RTL_PROCESS_MODULES, Modules )) {
         ModuleInformation->NumberOfModules = NumberOfModules;
     } else {
         Status = STATUS_INFO_LENGTH_MISMATCH;
