@@ -37,7 +37,7 @@ defs 	  = $(targdefs) -DCONDITION_HANDLING=1 -DNT_INST=0 -DWIN32=100 -D_NT1X_=10
 			-D__BUILDMACHINE__=WRK1.2(university) -DNDEBUG  -D_NTSYSTEM_ -DNT_SMT -DNTOS_KERNEL_RUNTIME=1
 
 aopts	  = -Cx -Zi $(targaopts)
-copts 	  = -Zl -Zp8 -Gy -cbstring -W3 -WX -GR- -GF -GS $(targcopts)
+copts 	  = -Zl -Zp8 -Gy -cbstring -W3 -WX -GR- -GF -GS- $(targcopts)
 compilerwarnings = -FI$(ntos)\BUILD\WARNING.h
  
 AS		  = $(archml).exe -nologo
