@@ -1,7 +1,7 @@
 
 @ECHO OFF
 
-set WRKPATH=D:\git-repo\WRK-V1.2-VS-SLN
+set WRKPATH=%~dp0
 
 set ARCH=x86
 
