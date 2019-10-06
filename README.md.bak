@@ -9,7 +9,3 @@ WRK-V1.2-VS-SLN - x64 and x86 - disable optimization for easy debug - can be bui
   * wrk (windows research kernel) can be built using msvc 2019
   	- run build-msvcx64.bat to build wrk x64 using the latest msvc 2019 toolset
   	- run build-msvcx86.bat to build wrk x86 using the latest msvc 2019 toolset
-
-
-NOTE:
-Plan to be deprecated, please go to the new project @ https://github.com/smartmaster/wrk-msvc
