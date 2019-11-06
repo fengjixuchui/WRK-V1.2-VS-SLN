@@ -58,6 +58,10 @@ include ksamd64.inc
 ;
 ;--
 
+
+;sml_xmmword_ptr TEXTEQU <xmmword ptr>
+sml_xmmword_ptr TEXTEQU <byte ptr>
+
 SaFrame struct
         P1Home  dq ?                    ; parameter home addresses
         P2Home  dq ?                    ;
@@ -95,16 +99,16 @@ SaFrame ends
         save_reg r13, SaFrame.SavedR13  ;
         save_reg r14, SaFrame.SavedR14  ;
         save_reg r15, SaFrame.SavedR15  ;
-        save_xmm128 xmm6, SaFrame.SavedXmm6 ; save nonvolatile floating registers
-        save_xmm128 xmm7, SaFrame.SavedXmm7 ;
-        save_xmm128 xmm8, SaFrame.SavedXmm8 ;
-        save_xmm128 xmm9, SaFrame.SavedXmm9 ;
-        save_xmm128 xmm10, SaFrame.SavedXmm10 ;
-        save_xmm128 xmm11, SaFrame.SavedXmm11 ;
-        save_xmm128 xmm12, SaFrame.SavedXmm12 ;
-        save_xmm128 xmm13, SaFrame.SavedXmm13 ;
-        save_xmm128 xmm14, SaFrame.SavedXmm14 ;
-        save_xmm128 xmm15, SaFrame.SavedXmm15 ;
+        save_xmm128 xmm6, sml_xmmword_ptr SaFrame.SavedXmm6 ; save nonvolatile floating registers
+        save_xmm128 xmm7, sml_xmmword_ptr SaFrame.SavedXmm7 ;
+        save_xmm128 xmm8, sml_xmmword_ptr SaFrame.SavedXmm8 ;
+        save_xmm128 xmm9, sml_xmmword_ptr SaFrame.SavedXmm9 ;
+        save_xmm128 xmm10, sml_xmmword_ptr SaFrame.SavedXmm10 ;
+        save_xmm128 xmm11, sml_xmmword_ptr SaFrame.SavedXmm11 ;
+        save_xmm128 xmm12, sml_xmmword_ptr SaFrame.SavedXmm12 ;
+        save_xmm128 xmm13, sml_xmmword_ptr SaFrame.SavedXmm13 ;
+        save_xmm128 xmm14, sml_xmmword_ptr SaFrame.SavedXmm14 ;
+        save_xmm128 xmm15, sml_xmmword_ptr SaFrame.SavedXmm15 ;
 
         END_PROLOGUE
 
@@ -134,16 +138,16 @@ GsCS10: mov     rcx, SaFrame.Event[rsp] ; set event address
         mov     r13, SaFrame.SavedR13[rsp] ;
         mov     r14, SaFrame.SavedR14[rsp] ;
         mov     r15, SaFrame.SavedR15[rsp] ;
-        movdqa  xmm6, SaFrame.SavedXmm6[rsp] ; restore nonvolatile floating registers
-        movdqa  xmm7, SaFrame.SavedXmm7[rsp] ;
-        movdqa  xmm8, SaFrame.SavedXmm8[rsp] ;
-        movdqa  xmm9, SaFrame.SavedXmm9[rsp] ;
-        movdqa  xmm10, SaFrame.SavedXmm10[rsp] ;
-        movdqa  xmm11, SaFrame.SavedXmm11[rsp] ;
-        movdqa  xmm12, SaFrame.SavedXmm12[rsp] ;
-        movdqa  xmm13, SaFrame.SavedXmm13[rsp] ;
-        movdqa  xmm14, SaFrame.SavedXmm14[rsp] ;
-        movdqa  xmm15, SaFrame.SavedXmm15[rsp] ;
+        movdqa  xmm6, sml_xmmword_ptr SaFrame.SavedXmm6[rsp] ; restore nonvolatile floating registers
+        movdqa  xmm7, sml_xmmword_ptr SaFrame.SavedXmm7[rsp] ;
+        movdqa  xmm8, sml_xmmword_ptr SaFrame.SavedXmm8[rsp] ;
+        movdqa  xmm9, sml_xmmword_ptr SaFrame.SavedXmm9[rsp] ;
+        movdqa  xmm10, sml_xmmword_ptr SaFrame.SavedXmm10[rsp] ;
+        movdqa  xmm11, sml_xmmword_ptr SaFrame.SavedXmm11[rsp] ;
+        movdqa  xmm12, sml_xmmword_ptr SaFrame.SavedXmm12[rsp] ;
+        movdqa  xmm13, sml_xmmword_ptr SaFrame.SavedXmm13[rsp] ;
+        movdqa  xmm14, sml_xmmword_ptr SaFrame.SavedXmm14[rsp] ;
+        movdqa  xmm15, sml_xmmword_ptr SaFrame.SavedXmm15[rsp] ;
         add     rsp, (sizeof SaFrame)   ; deallocate stack frame
         ret                             ; return
 

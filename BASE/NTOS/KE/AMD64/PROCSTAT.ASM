@@ -298,6 +298,9 @@ KeBC50: mov     qword ptr Beframe.P5Home[rsp], 0  ; set parameter 5 to 0
 ;
 ;--
 
+sml_xmmword_ptr  TEXTEQU <byte ptr>
+;sml_xmmword_ptr  TEXTEQU <xmmword ptr>
+
 KfFrame struct
         P1Home  dq ?                    ; parameter home addresses
         P2Home  dq ?                    ;
@@ -322,16 +325,16 @@ KfFrame ends
         NESTED_ENTRY KeContextToKframes, _TEXT$00
 
         alloc_stack (sizeof KfFrame)    ; allocate stack frame
-        save_xmm128 xmm6, KfFrame.SavedXmm6 ; save nonvolatile floating registers
-        save_xmm128 xmm7, KfFrame.SavedXmm7 ;
-        save_xmm128 xmm8, KfFrame.SavedXmm8 ;
-        save_xmm128 xmm9, KfFrame.SavedXmm9 ;
-        save_xmm128 xmm10, KfFrame.SavedXmm10 ;
-        save_xmm128 xmm11, KfFrame.SavedXmm11 ;
-        save_xmm128 xmm12, KfFrame.SavedXmm12 ;
-        save_xmm128 xmm13, KfFrame.SavedXmm13 ;
-        save_xmm128 xmm14, KfFrame.SavedXmm14 ;
-        save_xmm128 xmm15, KfFrame.SavedXmm15 ;
+        save_xmm128 xmm6, sml_xmmword_ptr KfFrame.SavedXmm6 ; save nonvolatile floating registers
+        save_xmm128 xmm7, sml_xmmword_ptr KfFrame.SavedXmm7 ;
+        save_xmm128 xmm8, sml_xmmword_ptr KfFrame.SavedXmm8 ;
+        save_xmm128 xmm9, sml_xmmword_ptr KfFrame.SavedXmm9 ;
+        save_xmm128 xmm10, sml_xmmword_ptr KfFrame.SavedXmm10 ;
+        save_xmm128 xmm11, sml_xmmword_ptr KfFrame.SavedXmm11 ;
+        save_xmm128 xmm12, sml_xmmword_ptr KfFrame.SavedXmm12 ;
+        save_xmm128 xmm13, sml_xmmword_ptr KfFrame.SavedXmm13 ;
+        save_xmm128 xmm14, sml_xmmword_ptr KfFrame.SavedXmm14 ;
+        save_xmm128 xmm15, sml_xmmword_ptr KfFrame.SavedXmm15 ;
 
         END_PROLOGUE
 
@@ -359,16 +362,16 @@ KfCS20: cmp     KfFrame.OldIrql[rsp], APC_LEVEL ; check if lower IRQL required
         jae     short KfCS30            ; if ae, lower IRQL not necessary
         mov     eax, KfFrame.OldIrql[rsp] ; lower IRQL to previous level
         mov     cr8, rax                ;
-KfCS30: movdqa  xmm6, KfFrame.SavedXmm6[rsp] ; restore nonvolatile floating registers
-        movdqa  xmm7, KfFrame.SavedXmm7[rsp] ;
-        movdqa  xmm8, KfFrame.SavedXmm8[rsp] ;
-        movdqa  xmm9, KfFrame.SavedXmm9[rsp] ;
-        movdqa  xmm10, KfFrame.SavedXmm10[rsp] ;
-        movdqa  xmm11, KfFrame.SavedXmm11[rsp] ;
-        movdqa  xmm12, KfFrame.SavedXmm12[rsp] ;
-        movdqa  xmm13, KfFrame.SavedXmm13[rsp] ;
-        movdqa  xmm14, KfFrame.SavedXmm14[rsp] ;
-        movdqa  xmm15, KfFrame.SavedXmm15[rsp] ;
+KfCS30: movdqa  xmm6, sml_xmmword_ptr KfFrame.SavedXmm6[rsp] ; restore nonvolatile floating registers
+        movdqa  xmm7, sml_xmmword_ptr KfFrame.SavedXmm7[rsp] ;
+        movdqa  xmm8, sml_xmmword_ptr KfFrame.SavedXmm8[rsp] ;
+        movdqa  xmm9, sml_xmmword_ptr KfFrame.SavedXmm9[rsp] ;
+        movdqa  xmm10, sml_xmmword_ptr KfFrame.SavedXmm10[rsp] ;
+        movdqa  xmm11, sml_xmmword_ptr KfFrame.SavedXmm11[rsp] ;
+        movdqa  xmm12, sml_xmmword_ptr KfFrame.SavedXmm12[rsp] ;
+        movdqa  xmm13, sml_xmmword_ptr KfFrame.SavedXmm13[rsp] ;
+        movdqa  xmm14, sml_xmmword_ptr KfFrame.SavedXmm14[rsp] ;
+        movdqa  xmm15, sml_xmmword_ptr KfFrame.SavedXmm15[rsp] ;
         add     rsp, (sizeof KfFrame)   ; deallocate stack frame
         ret                             ; return
 

@@ -846,7 +846,7 @@ Return Value:
             KeReleaseQueuedSpinLock( LockQueueIoDatabaseLock, Irql );
 
             if (fastIoDispatch &&
-                fastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET( FAST_IO_DISPATCH, FastIoDetachDevice ) &&
+                fastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET( FAST_IO_DISPATCH, FastIoDetachDevice ) &&
                 fastIoDispatch->FastIoDetachDevice) {
                 (fastIoDispatch->FastIoDetachDevice)( attachedDevice, DeviceObject );
             }

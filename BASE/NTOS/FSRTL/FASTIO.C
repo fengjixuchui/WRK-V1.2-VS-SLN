@@ -1354,7 +1354,7 @@ Return Value:
     //
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlRead)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlRead)) &&
         (FastIoDispatch->MdlRead != NULL)) {
 
         return FastIoDispatch->MdlRead( FileObject, FileOffset, Length, LockKey, MdlChain, IoStatus, DeviceObject );
@@ -1370,7 +1370,7 @@ Return Value:
         VolumeDeviceObject = IoGetBaseFileSystemDeviceObject( FileObject );
         if ((VolumeDeviceObject != DeviceObject) &&
             (FastIoDispatch = VolumeDeviceObject->DriverObject->FastIoDispatch) &&
-            (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlRead)) &&
+            (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlRead)) &&
             (FastIoDispatch->MdlRead != NULL)) {
 
             return FALSE;
@@ -1429,7 +1429,7 @@ Return Value:
     //
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlReadComplete)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlReadComplete)) &&
         (FastIoDispatch->MdlReadComplete != NULL)) {
 
         return FastIoDispatch->MdlReadComplete( FileObject, MdlChain, DeviceObject );
@@ -1445,7 +1445,7 @@ Return Value:
         VolumeDeviceObject = IoGetBaseFileSystemDeviceObject( FileObject );
         if ((VolumeDeviceObject != DeviceObject) &&
             (FastIoDispatch = VolumeDeviceObject->DriverObject->FastIoDispatch) &&
-            (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlReadComplete)) &&
+            (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlReadComplete)) &&
             (FastIoDispatch->MdlReadComplete != NULL)) {
 
             return FALSE;
@@ -1941,7 +1941,7 @@ Return Value:
     //
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, PrepareMdlWrite)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, PrepareMdlWrite)) &&
         (FastIoDispatch->PrepareMdlWrite != NULL)) {
 
         return FastIoDispatch->PrepareMdlWrite( FileObject, FileOffset, Length, LockKey, MdlChain, IoStatus, DeviceObject );
@@ -1957,7 +1957,7 @@ Return Value:
         VolumeDeviceObject = IoGetBaseFileSystemDeviceObject( FileObject );
         if ((VolumeDeviceObject != DeviceObject) &&
             (FastIoDispatch = VolumeDeviceObject->DriverObject->FastIoDispatch) &&
-            (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, PrepareMdlWrite)) &&
+            (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, PrepareMdlWrite)) &&
             (FastIoDispatch->PrepareMdlWrite != NULL)) {
 
             return FALSE;
@@ -2015,7 +2015,7 @@ Return Value:
     //
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
         (FastIoDispatch->MdlWriteComplete != NULL)) {
 
         return FastIoDispatch->MdlWriteComplete( FileObject, FileOffset, MdlChain, DeviceObject );
@@ -2031,7 +2031,7 @@ Return Value:
         VolumeDeviceObject = IoGetBaseFileSystemDeviceObject( FileObject );
         if ((VolumeDeviceObject != DeviceObject) &&
             (FastIoDispatch = VolumeDeviceObject->DriverObject->FastIoDispatch) &&
-            (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
+            (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
             (FastIoDispatch->MdlWriteComplete != NULL)) {
 
             return FALSE;

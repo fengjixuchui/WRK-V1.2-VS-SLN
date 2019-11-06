@@ -172,7 +172,7 @@ Return Value:
                     // Get the size of the current entry in the buffer.
                     //
 
-                    if (tempLength < FIELD_OFFSET( FILE_GET_EA_INFORMATION, EaName[0])) {
+                    if (tempLength < (LONG)FIELD_OFFSET( FILE_GET_EA_INFORMATION, EaName[0])) {
                         tempLength = 0;
                         ExFreePool( auxiliaryBuffer );
                         auxiliaryBuffer = (PVOID) NULL;

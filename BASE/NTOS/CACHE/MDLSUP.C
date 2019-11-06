@@ -396,7 +396,7 @@ CcMdlReadComplete (
     FastIoDispatch = DeviceObject->DriverObject->FastIoDispatch;
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
         (FastIoDispatch->MdlReadComplete != NULL) &&
         FastIoDispatch->MdlReadComplete( FileObject, MdlChain, DeviceObject )) {
 
@@ -836,7 +836,7 @@ CcMdlWriteComplete (
     FastIoDispatch = DeviceObject->DriverObject->FastIoDispatch;
 
     if ((FastIoDispatch != NULL) &&
-        (FastIoDispatch->SizeOfFastIoDispatch > FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
+        (FastIoDispatch->SizeOfFastIoDispatch > (ULONG)FIELD_OFFSET(FAST_IO_DISPATCH, MdlWriteComplete)) &&
         (FastIoDispatch->MdlWriteComplete != NULL) &&
         FastIoDispatch->MdlWriteComplete( FileObject, FileOffset, MdlChain, DeviceObject )) {
 

@@ -2592,7 +2592,7 @@ Return Value:
         // Start by checking that the fixed size lies within the stated length.
         //
 
-        if (tempLength < FIELD_OFFSET( FILE_FULL_EA_INFORMATION, EaName[0])) {
+        if (tempLength < (LONG)FIELD_OFFSET( FILE_FULL_EA_INFORMATION, EaName[0])) {
 
             *ErrorOffset = GET_OFFSET_LENGTH( eas, EaBuffer );
             return STATUS_EA_LIST_INCONSISTENT;
@@ -3097,7 +3097,7 @@ Return Value:
         // ensure that the SID itself is valid.
         //
 
-        if (tempLength < FIELD_OFFSET( FILE_QUOTA_INFORMATION, Sid ) ||
+        if (tempLength < (LONG)FIELD_OFFSET( FILE_QUOTA_INFORMATION, Sid ) ||
             !RtlValidSid( &quotas->Sid )) {
             goto error_exit;
         }

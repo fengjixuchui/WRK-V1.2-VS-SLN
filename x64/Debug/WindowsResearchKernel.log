@@ -1,39 +1,38 @@
-﻿D:\Microsoft Visual Studio 2017 Enterprise\Common7\IDE\VC\VCTargets\Microsoft.Cpp.props(31,3): warning MSB4011: "D:\Microsoft Visual Studio 2017 Enterprise\Common7\IDE\VC\VCTargets\Microsoft.Makefile.props" cannot be imported again. It was already imported at "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.cpp.props (31,3)". This is most likely a build authoring error. This subsequent import will be ignored. [E:\~en_wrk\WRK-V1.2-VS-SLN\WindowsResearchKernel.vcxproj]
-  	checktoolarch amd64
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\rtl\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\config\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\ex\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\ob\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\se\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\mm\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\ke\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\ps\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\io\iomgr\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\io\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\cache\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\lpc\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\dbgk\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\raw\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\fstub\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\fsrtl\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\wmi\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\perf\BUILD
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\init\BUILD
+﻿  	checktoolarch amd64
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\rtl\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\config\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\ex\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\ob\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\se\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\mm\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\ke\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\ps\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\io\iomgr\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\io\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\cache\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\lpc\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\dbgk\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\raw\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\fstub\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\fsrtl\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\wmi\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\perf\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\init\BUILD
   
-  E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\init\BUILD>xcopy objamd64\ntkrnlmp.obj E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64\ /Y 
+  D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\init\BUILD>xcopy objamd64\ntkrnlmp.obj D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64\ /Y 
   objamd64\ntkrnlmp.obj
   1 File(s) copied
-  	cd E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD
+  	cd D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD
   	copy ..\init\ntoskrnl.src+..\init\amd64def.src objamd64\wrkamd64.pp
   ..\init\NTOSKRNL.SRC
   ..\init\AMD64DEF.SRC
           1 file(s) copied.
-  	cl.exe -nologo -Zl -Zp8 -Gy -cbstring -W3 -WX -GR- -GF -GS -Wp64 -Zi -Od -EHs-c- /Od -Gs12288 -MT -U_MT -I..\amd64 -I. -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\ddk\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\ds\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\sdktools\inc  -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\base\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\sdk\inc -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\sdk\inc\crt -IE:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\halkit\inc -Foobjamd64\ -D_WIN64 -D_AMD64_ -DAMD64 -DCONDITION_HANDLING=1 -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1  -D_WIN32_WINNT=0x0502 -DWINVER=0x0502 -D_WIN32_IE=0x0603 -DWIN32_LEAN_AND_MEAN=1 -DDBG=0 -DDEVL=1  -D__BUILDMACHINE__=WRK1.2(university) -DNDEBUG  -D_NTSYSTEM_ -DNT_SMT -DNTOS_KERNEL_RUNTIME=1  -EP objamd64\wrkamd64.pp > EXE\wrkamd64.def
+  	cl.exe -nologo -Zl -Zp8 -Gy -cbstring -W3 -WX -GR- -GF -GS -Wp64 -Zi -Od -EHs-c- /Od -Gs12288 -MT -U_MT -I..\amd64 -I. -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\ddk\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\ds\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\sdktools\inc  -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\internal\base\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\sdk\inc -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\sdk\inc\crt -ID:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\..\..\public\halkit\inc -Foobjamd64\ -D_WIN64 -D_AMD64_ -DAMD64 -DCONDITION_HANDLING=1 -DNT_INST=0 -DWIN32=100 -D_NT1X_=100 -DWINNT=1  -D_WIN32_WINNT=0x0502 -DWINVER=0x0502 -D_WIN32_IE=0x0603 -DWIN32_LEAN_AND_MEAN=1 -DDBG=0 -DDEVL=1  -D__BUILDMACHINE__=WRK1.2(university) -DNDEBUG  -D_NTSYSTEM_ -DNT_SMT -DNTOS_KERNEL_RUNTIME=1  -EP objamd64\wrkamd64.pp > EXE\wrkamd64.def
   wrkamd64.pp
   	del objamd64\wrkamd64.pp
-  	lib.exe -nologo -LIBPATH:E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 -WX -nodefaultlib -machine:amd64 -IGNORE:4001 objamd64\*.lib ntoswrk.lib -def:EXE\wrkamd64.def -out:EXE\wrkamd64.lib
+  	lib.exe -nologo -LIBPATH:D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 -WX -nodefaultlib -machine:amd64 -IGNORE:4001 objamd64\*.lib ntoswrk.lib -def:EXE\wrkamd64.def -out:EXE\wrkamd64.lib
      Creating library EXE\wrkamd64.lib and object EXE\wrkamd64.exp
-  	lib.exe -nologo -LIBPATH:E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 EXE\wrkamd64.lib ntosarch.lib -out:EXE\wrkamd64.lib
-  	link.exe -nologo -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4087,4001,4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 -WX -NODEFAULTLIB -machine:amd64 -LIBPATH:E:\~en_wrk\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 -release -version:5.2 -osversion:5.2 -subsystem:native,5.02 -merge:PAGECONST=PAGE -merge:INITCONST=INIT -merge:INITDATA=INIT -merge:PAGELKCONST=PAGELK  -merge:PAGEVRFY_CONST=PAGEVRFY -MERGE:_PAGE=PAGE -MERGE:_TEXT=.text -merge:.rdata=.text -SECTION:INIT,d -OPT:REF -OPT:ICF -INCREMENTAL:NO  -FULLBUILD -debug -functionpadmin:6 -debugtype:cv,fixup,pdata -STACK:0x80000,0x2000 -opt:nowin98 -pdbcompress -driver -out:EXE\wrkamd64.exe -map:EXE\wrkamd64.map -pdb:EXE\wrkamd64.pdb -entry:KiSystemStartup  PREBUILT\amd64\hotpatch.obj PREBUILT\amd64\ntoskrnl.res objamd64\ntkrnlmp.obj objamd64\*.lib ntoswrk.lib hal.lib EXE\wrkamd64.exp bootvid.lib sdbapint.lib kdcom.lib
+  	lib.exe -nologo -LIBPATH:D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 EXE\wrkamd64.lib ntosarch.lib -out:EXE\wrkamd64.lib
+  	link.exe -nologo -IGNORE:4108,4088,4218,4218,4235 -IGNORE:4087,4001,4010,4037,4039,4065,4070,4078,4087,4089,4221,4198 -WX -NODEFAULTLIB -machine:amd64 -LIBPATH:D:\git-repo\WRK-V1.2-VS-SLN\BASE\NTOS\BUILD\objamd64 -LIBPATH:PREBUILT\amd64 -release -version:5.2 -osversion:5.2 -subsystem:native,5.02 -merge:PAGECONST=PAGE -merge:INITCONST=INIT -merge:INITDATA=INIT -merge:PAGELKCONST=PAGELK  -merge:PAGEVRFY_CONST=PAGEVRFY -MERGE:_PAGE=PAGE -MERGE:_TEXT=.text -merge:.rdata=.text -SECTION:INIT,d -OPT:REF -OPT:ICF -INCREMENTAL:NO  -FULLBUILD -debug -functionpadmin:6 -debugtype:cv,fixup,pdata -STACK:0x80000,0x2000 -opt:nowin98 -pdbcompress -driver -out:EXE\wrkamd64.exe -map:EXE\wrkamd64.map -pdb:EXE\wrkamd64.pdb -entry:KiSystemStartup  PREBUILT\amd64\hotpatch.obj PREBUILT\amd64\ntoskrnl.res objamd64\ntkrnlmp.obj objamd64\*.lib ntoswrk.lib hal.lib EXE\wrkamd64.exp bootvid.lib sdbapint.lib kdcom.lib
   	link.exe -edit -nologo -section:.rsrc,!d EXE\wrkamd64.exe
   

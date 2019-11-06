@@ -19,12 +19,9 @@ Abstract:
 
 #include "mi.h"
 
-//#if 0
 #if DBG
 extern ULONG MiShowStuckPages;
 #endif
-//#endif
-
 
 PVOID
 MiFindContiguousMemoryInPool (
@@ -5633,7 +5630,6 @@ rescan:
 
                     } while (TRUE);
 
-//#if 0
 #if DBG
                     if (MiShowStuckPages != 0) {
                         DbgPrintEx (DPFLTR_MM_ID, DPFLTR_INFO_LEVEL, 
@@ -5644,8 +5640,6 @@ rescan:
                         }
                     }
 #endif
-//#endif
-					
                     UNLOCK_PFN (OldIrql);
 
                     //
@@ -5656,7 +5650,6 @@ rescan:
                 }
             }
             else {
-//#if 0
 #if DBG
                 if (MiShowStuckPages != 0) {
                     DbgPrintEx (DPFLTR_MM_ID, DPFLTR_INFO_LEVEL, 
@@ -5667,7 +5660,6 @@ rescan:
                     }
                 }
 #endif
-//#endif
                 found = 0;
             }
 

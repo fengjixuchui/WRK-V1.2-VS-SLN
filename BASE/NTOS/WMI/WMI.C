@@ -768,7 +768,7 @@ WmipIoControl(
         case IOCTL_WMI_ENUMERATE_GUIDS_AND_PROPERTIES:
         case IOCTL_WMI_ENUMERATE_GUIDS:
         {
-            if (OutBufferLen < FIELD_OFFSET(WMIGUIDLISTINFO, GuidList))
+            if (OutBufferLen < (ULONG)FIELD_OFFSET(WMIGUIDLISTINFO, GuidList))
             {
                 Status = STATUS_BUFFER_TOO_SMALL;
             } else {
@@ -1170,7 +1170,7 @@ WmipIoControl(
             ULONG MessageSize;
             PWMIMBREPLY WmiMBReply;
 
-            if (InBufferLen >= FIELD_OFFSET(WMIMBREPLY, Message))
+            if (InBufferLen >= (ULONG)FIELD_OFFSET(WMIMBREPLY, Message))
             {
                 WmiMBReply = (PWMIMBREPLY)Buffer;
                 Message = (PUCHAR)Buffer + FIELD_OFFSET(WMIMBREPLY, Message);
@@ -1460,7 +1460,7 @@ WmipIoControl(
         case IOCTL_WMI_SET_MARK:
         {
             OutBufferLen = 0;
-            if ( InBufferLen <= FIELD_OFFSET(WMI_SET_MARK_INFORMATION, Mark)) {
+            if ( InBufferLen <= (ULONG)FIELD_OFFSET(WMI_SET_MARK_INFORMATION, Mark)) {
                 Status = STATUS_UNSUCCESSFUL;
                 break;
             }
@@ -1902,7 +1902,7 @@ Return Value:
         if (((MinorFunction == IRP_MN_REGINFO) ||
              (MinorFunction == IRP_MN_REGINFO_EX)) &&
             (NT_SUCCESS(Status)) &&
-            (Irp->IoStatus.Information > FIELD_OFFSET(WMIREGINFOW,
+            (Irp->IoStatus.Information > (ULONG)FIELD_OFFSET(WMIREGINFOW,
                                                       WmiRegGuid)))
         {
             WmipTranslatePDOInstanceNames(Irp,
@@ -2609,8 +2609,8 @@ Return Value:
     // Make sure that enough of the WNODE_SINGLE_INSTANCE was passed
     // so that we can look at it
     //
-    if ((InBufferLen < FIELD_OFFSET(WNODE_SINGLE_INSTANCE, VariableData)) ||
-        ( (OutBound) && (OutBufferLen < FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
+    if ((InBufferLen < (ULONG)FIELD_OFFSET(WNODE_SINGLE_INSTANCE, VariableData)) ||
+        ( (OutBound) && (OutBufferLen < (ULONG)FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
                                                      VariableData))))
     {
         return(STATUS_UNSUCCESSFUL);
@@ -2618,8 +2618,8 @@ Return Value:
 
 
     Status = WmipProbeWnodeWorker(WnodeHeader,
-                                  FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
-                                               VariableData),
+								(ULONG)FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
+                                  VariableData),
                                   Wnode->OffsetInstanceName,
                                   Wnode->DataBlockOffset,
                                   Wnode->SizeDataBlock,
@@ -2632,7 +2632,7 @@ Return Value:
     {
         Status = WmipValidateWnodeHeader(WnodeHeader,
                                  InBufferLen,
-                                 FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
+                                 (ULONG)FIELD_OFFSET(WNODE_SINGLE_INSTANCE,
                                               VariableData),
                                  WNODE_FLAG_SINGLE_INSTANCE,
                                  0xffffff7d);
@@ -2714,7 +2714,7 @@ Return Value:
     // Make sure that enough of the WNODE_SINGLE_ITEM was passed
     // so that we can look at it
     //
-    if (InBufferLen < FIELD_OFFSET(WNODE_SINGLE_ITEM, VariableData))
+    if (InBufferLen < (ULONG)FIELD_OFFSET(WNODE_SINGLE_ITEM, VariableData))
     {
         return(STATUS_UNSUCCESSFUL);
     }
@@ -2740,7 +2740,7 @@ Return Value:
     {
         Status = WmipValidateWnodeHeader(WnodeHeader,
                                      InBufferLen,
-                                     FIELD_OFFSET(WNODE_SINGLE_ITEM,
+                                     (ULONG)FIELD_OFFSET(WNODE_SINGLE_ITEM,
                                                   VariableData),
                                      WNODE_FLAG_SINGLE_ITEM,
                                      0xffffff7b);
@@ -2834,7 +2834,7 @@ Return Value:
     // Make sure that enough of the WNODE_METHOD_ITEM was passed
     // so that we can look at it
     //
-    if (InBufferLen < FIELD_OFFSET(WNODE_METHOD_ITEM, VariableData))
+    if (InBufferLen < (ULONG)FIELD_OFFSET(WNODE_METHOD_ITEM, VariableData))
     {
         return(STATUS_UNSUCCESSFUL);
     }
@@ -2853,7 +2853,7 @@ Return Value:
     {
         Status = WmipValidateWnodeHeader(WnodeHeader,
                                  InBufferLen,
-                                 FIELD_OFFSET(WNODE_METHOD_ITEM,
+                                 (ULONG)FIELD_OFFSET(WNODE_METHOD_ITEM,
                                               VariableData),
                                  WNODE_FLAG_METHOD_ITEM,
                                  0xffff7f7f);

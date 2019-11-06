@@ -2,7 +2,8 @@
 
 call setenv.bat
 
-cd base\ntos\
+pushd base\ntos\
 
 nmake -nologo %ARCH%=
 
+popd

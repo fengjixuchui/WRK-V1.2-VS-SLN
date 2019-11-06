@@ -401,7 +401,7 @@ typedef struct tagDATASOURCE
     
     // Guid object if this is a UM provider
     struct _WMIGUIDOBJECT *RequestObject;
-};
+} DATASOURCE;
 
 #define DS_SIGNATURE 'SDmW'
 
